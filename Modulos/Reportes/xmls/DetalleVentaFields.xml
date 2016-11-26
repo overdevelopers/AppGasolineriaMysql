@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tblDetalleVenta>  
+  <sale_id></sale_id>
+  <pump_id></pump_id>
+  <hose_id></hose_id>
+  <grade_id></grade_id>
+  <tkt_plu_short_desc></tkt_plu_short_desc>
+  <volume></volume>
+  <money></money>
+  <end_date_time></end_date_time>  
+</tblDetalleVenta>

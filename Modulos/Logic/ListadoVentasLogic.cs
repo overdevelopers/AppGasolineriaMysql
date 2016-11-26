@@ -8,6 +8,8 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Collections;
 using Modulos.ViewModel;
+using System.Configuration;
+
 namespace Modulos.Logic
 {
     public class ListadoVentasLogic
@@ -114,6 +116,18 @@ namespace Modulos.Logic
                 {
                     Reportes.crpDetalleVenta cryRpt = new Reportes.crpDetalleVenta();
                     cryRpt.SetDataSource(data);
+                    /*
+                    string nombre_empresa= ConfigurationManager.AppSettings["Nombre_Empresa"].ToString();
+                    string rnc_empresa=ConfigurationManager.AppSettings["RNC_Empresa"].ToString();
+                    string direccion_empresa= ConfigurationManager.AppSettings["Direccion_Empresa"].ToString();
+                    string telefono_empresa = ConfigurationManager.AppSettings["Telefono_Empresa"].ToString();
+                    string saludo_empresa = ConfigurationManager.AppSettings["Saludo_Empresa"].ToString();
+                    */
+                    ///cryRpt.SetParameterValue("tkt_cust_name", nombre_empresa);
+                    //cryRpt.SetParameterValue("rnc_empresa", rnc_empresa);
+                    ///cryRpt.SetParameterValue("txt_cust_address", direccion_empresa);
+                    //cryRpt.SetParameterValue("telefono_empresa", telefono_empresa);
+                    ///cryRpt.SetParameterValue("tkt_cust_mensaje", saludo_empresa);
                     cryRpt.PrintToPrinter(1, false, 0, 0);
                     rpta = "SI";
                 }
@@ -124,7 +138,7 @@ namespace Modulos.Logic
             }
             catch (Exception ex)
             {
-                rpta = ex.Message;
+                rpta = ex.ToString();
             }
             return rpta;
         }
