@@ -1,0 +1,32 @@
+﻿<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+@{
+    ViewBag.Title = "Preferencias de Tanque";
+}
+<script src="~/scripts/Logic/configuracion_Tanques.js"></script>
+<h2 class="text-center">Preferencias de Tanque</h2>
+
+<div class="container">
+    <div class="form-group" id="Paleta">
+        <input id="txtIdActual" class="hidden" />
+        <label>Seleccione un color</label>
+        <input id="txtCodigo" type="color-picker" value="" class="btn" style="background-color:greenyellow" />
+        <button onclick="cancelar()" class="btn btn-danger">Cancelar</button>
+        <button onclick="guardar()" class="btn btn-warning">Guardar</button>
+    </div>
+    <div class="table-responsive">
+        <table id="tblConfiguracionTanques">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tanque</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div>
+

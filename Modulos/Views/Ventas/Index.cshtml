@@ -1,0 +1,75 @@
+﻿<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+@{
+    ViewBag.Title = "Listado de Ventas";
+}
+<script src="~/scripts/Logic/listado_ventas.js"></script>
+<h2 class="text-center">Listado de Ventas</h2>
+<div class="container">
+    <center>
+        <form id="form_filtro" class="form-inline text-center">
+            <div class="form-group text-center">
+                <label for="txtSurtidor">Surtidor:</label>
+                <input type="number" class="form-control" style="width: 90px;" min="0" id="txtSurtidor" name="txtSurtidor" />
+            </div>
+            <div class="form-group text-center">
+                <label for="txtManguera">Manguera:</label>
+                <input type="number" class="form-control" style="width: 90px;" min="0" id="txtManguera" name="txtManguera" />
+            </div>
+            <div class="form-group text-center">
+                <label for="txtUltimasVentas">Ultimas</label>
+                <input type="number" class="form-control" style="width: 90px;" min="0" id="txtUltimasVentas" name="txtUltimasVentas" />
+                <label>Ventas</label>
+            </div>
+            <button id="btnCargarDatos" type="button" class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span> Cargar Datos</button>
+        </form>
+    </center>
+</div>
+
+<br />
+
+<div class="container">
+    <div class="table-responsive">
+        <table id="tblVentas">
+            <thead>
+                <tr>
+                    <th>#Venta</th>
+                    <th>Lado</th>
+                    <th>Manguera</th>
+                    <th>Combustible</th>
+                    <th>Volumen</th>
+                    <th>Monto</th>
+                    <th>Fecha-Hora</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+</div>
+<div class="container">
+    <input class="hidden" type="text" id="VentaSeleccionada" />
+    <input class="hidden" type="text" id="ladoSeleccionado" />
+    <input class="hidden" type="text" id="mangueraSeleccionado" />
+    <input class="hidden" type="text" id="combustibleSeleccionado" />
+    <input class="hidden" type="text" id="volumenSeleccionado" />
+    <input class="hidden" type="text" id="montoSeleccionado" />
+    <input class="hidden" type="text" id="fechaSeleccionado" />
+    
+    <input class="hidden" type="text" id="TipoPagoSeleccionado" />
+    <input class="hidden" type="text" id="formaPagoSeleccionado" />
+    <input class="hidden" type="text" id="txtClienteSeleccionado" />
+    <input class="hidden" type="text" id="rncSeleccionado" />
+    <input class="hidden" type="text" id="PlacaSeleccionado" />
+    <input class="hidden" type="text" id="NumeroTarjetaSeleccionado" />
+    <input class="hidden" type="text" id="txtRespuesta" />
+</div>
+@Html.Partial("Modals/TipoTicket")
+@Html.Partial("Modals/TipoComprobante")
+@Html.Partial("Modals/TipoPago")
+@Html.Partial("Modals/RncEmpresa")
+@Html.Partial("Modals/RncTarjeta")
+@Html.Partial("Modals/Imprimir")
